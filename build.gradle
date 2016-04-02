@@ -7,20 +7,27 @@ repositories {
     jcenter()
 }
 
-
 node {
     download = true
     // Set the work directory for unpacking node
     workDir = file("${project.buildDir}/nodejs")
 
     // Set the work directory where node_modules should be located
-    nodeModulesDir = file("${project.buildDir}")
+//    nodeModulesDir = file("${project.buildDir}/node_modules")
 }
 
+task runMocha(type: Exec) {
+    executable 'node_modules/mocha/bin/mocha'
+    args 'src/test/js', '--recursive'
+}
 //task myScript(type: NodeTask) {
 //  script = file('src/scripts/my.js')
 //}
 
 task build {}
 
+task test {}
+
 build.dependsOn npmInstall
+runMocha.dependsOn npmInstall
+test.dependsOn runMocha
