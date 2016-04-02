@@ -9,7 +9,6 @@ require.config = {
     waitSeconds: 15
   };
 
-require("../../main/js/hello");
 //require( ["some/module", "my/module", "a.js", "b.js"],
   //  function(someModule,    myModule) {
         //This function will be called when all the dependencies
@@ -20,4 +19,3 @@ require("../../main/js/hello");
   //);
 //print "10:28"
 
-require('../../main/js/hello');
