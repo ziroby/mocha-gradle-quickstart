@@ -1,3 +1,5 @@
+require("amd-loader");
+
 require.config = {
     baseUrl: "../../main/js",
     paths: {
@@ -6,7 +8,9 @@ require.config = {
     nodeRequire: require,
     waitSeconds: 15
   };
-  //require( ["some/module", "my/module", "a.js", "b.js"],
+
+require("../../main/js/hello");
+//require( ["some/module", "my/module", "a.js", "b.js"],
   //  function(someModule,    myModule) {
         //This function will be called when all the dependencies
         //listed above are loaded. Note that this function could

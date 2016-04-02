@@ -1,4 +1,4 @@
-define(["hello"], function() {
+define(function() {
     function greet() {
         return "Hello, world!";
     }
