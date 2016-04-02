@@ -18,7 +18,7 @@ node {
 
 task runMocha(type: Exec) {
     executable 'node_modules/mocha/bin/mocha'
-    args 'src/test/js', 'src/main/js', '--recursive', '--colors'
+    args 'src/test/js', 'src/main/js', '--recursive', '--colors', '-r', 'src/test/js/test-setup'
 }
 //task myScript(type: NodeTask) {
 //  script = file('src/scripts/my.js')
